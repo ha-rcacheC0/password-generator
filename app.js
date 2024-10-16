@@ -1,3 +1,23 @@
+function handleGeneratePassword() {
+  const passwordLength = parseInt(
+    document.getElementById("password-length").value
+  );
+  const includeLowerCase = document.getElementById("include-lower").checked;
+  const includeUpperCase = document.getElementById("include-upper").checked;
+  const includeNumbers = document.getElementById("include-numbers").checked;
+  const includeSymbols = document.getElementById("include-symbols").checked;
+
+  const password = generatePassword(
+    passwordLength,
+    includeLowerCase,
+    includeUpperCase,
+    includeNumbers,
+    includeSymbols
+  );
+
+  document.getElementById("password-display").textContent = password;
+}
+
 function generatePassword(
   length,
   includeLowerCase,
@@ -35,10 +55,10 @@ function generatePassword(
 
 const passwordLength = 12;
 
-const includeLowerCase = true;
-const includeUpperCase = true;
-const includeNumbers = true;
-const includeSymbols = true;
+let includeLowerCase = true;
+let includeUpperCase = true;
+let includeNumbers = true;
+let includeSymbols = true;
 
 const password = generatePassword(
   passwordLength,
