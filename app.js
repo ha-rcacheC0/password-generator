@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const generateButton = document.getElementById("generate-button");
+  if (generateButton) {
+    generateButton.addEventListener("click", handleGeneratePassword);
+  } else {
+    console.log("Generate button not found! :(");
+  }
+});
+
 function handleGeneratePassword() {
   const passwordLength = parseInt(
     document.getElementById("password-length").value
@@ -53,19 +62,19 @@ function generatePassword(
   return password;
 }
 
-const passwordLength = 12;
+// const passwordLength = 12;
 
-let includeLowerCase = true;
-let includeUpperCase = true;
-let includeNumbers = true;
-let includeSymbols = true;
+// let includeLowerCase = true;
+// let includeUpperCase = true;
+// let includeNumbers = true;
+// let includeSymbols = true;
 
-const password = generatePassword(
-  passwordLength,
-  includeLowerCase,
-  includeUpperCase,
-  includeNumbers,
-  includeSymbols
-);
+// const password = generatePassword(
+//   passwordLength,
+//   includeLowerCase,
+//   includeUpperCase,
+//   includeNumbers,
+//   includeSymbols
+// );
 
-console.log(`Generated Password: ${password}`);
+// console.log(`Generated Password: ${password}`);
