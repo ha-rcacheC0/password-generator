@@ -3,8 +3,16 @@
   "name": "Password Generator",
   "description": "A free strong password generator to secure your accounts.",
   "version": "1.0",
+  "author": "lucaskelleremail@gmail.com",
   "action": {
-    "default_popup": "index.html",
-    "default_icon": "logo.png"
+    "default_popup": "popup.html",
+    "default_icon": "logo.png",
+    "default_title": "Password Generator"
+  },
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   }
 }

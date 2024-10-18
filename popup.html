@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="password generator, password, generator, secure, free generator, strong password, strong"
+    />
+    <meta
+      name="description"
+      content="This is a completely free secure strong password generator for your daily needs. Download today. Donate later."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.svg" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="title-top">
+      <h1 class="title blocker">Password Generator</h1>
+      <img src="/logo1.png" alt="logo" class="logo" />
+    </div>
+    <div class="outer-container">
+      <div class="container">
+        <div class="text-box">
+          <div class="text-area">
+            <label for="message" class="label"></label>
+            <textarea
+              name="message"
+              rows="6"
+              cols="35"
+              class="input"
+              placeholder="Your password will display here..."
+              id="text-area"
+              value=""
+            ></textarea>
+            <img
+              src="/copy.png"
+              id="copy-btn"
+              alt="copy-clipboard"
+              title="Copy to clipboard"
+            />
+            <p id="clip-text"></p>
+          </div>
+          <div class="progress-bar">
+            <div class="progress">
+              <div id="bar" class="bar"></div>
+            </div>
+          </div>
+          <div class="progress-text">
+            <p id="progress-text"></p>
+          </div>
+        </div>
+        <!-- <h2 id="password-display">Your password will display here...</h2> -->
+
+        <div class="selection-box">
+          <div class="length-box">
+            <label for="password-length" class="label2 blocker">Length: </label>
+            <input
+              type="number"
+              id="password-length"
+              name="password-length"
+              min="1"
+              max="128"
+              value="12"
+            />
+          </div>
+
+          <div class="checkbox-box">
+            <div class="letter-label">
+              <label for="include-lower" class="label"
+                >Include lower-case?
+                <input
+                  type="checkbox"
+                  id="include-lower"
+                  name="includes"
+                  value="include-lower"
+                  checked
+                />
+                <span class="includes"></span>
+              </label>
+
+              <label for="include-upper" class="label"
+                >Include upper-case?
+                <input
+                  type="checkbox"
+                  id="include-upper"
+                  name="includes"
+                  value="include-upper"
+                  checked
+                />
+                <span class="includes"></span>
+              </label>
+            </div>
+
+            <div class="num-sym-label">
+              <label for="include-numbers" class="label"
+                >Include numbers?
+                <input
+                  type="checkbox"
+                  id="include-numbers"
+                  name="includes"
+                  value="include-numbers"
+                  checked
+                />
+                <span class="includes"></span>
+              </label>
+
+              <label for="include-symbols" class="label"
+                >Include symbols?
+                <input
+                  type="checkbox"
+                  id="include-symbols"
+                  name="includes"
+                  value="include-symbols"
+                  checked
+                />
+                <span class="includes"></span>
+              </label>
+            </div>
+          </div>
+          <button class="blocker" id="generate-button">Generate</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
