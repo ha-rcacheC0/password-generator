@@ -43,10 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (progress === 6) {
       progressText.textContent = `Secure. 🔐`;
+      progressText.style.color = "var(--p-c)";
       progressBar.width = "250px";
       progressBar.backgroundColor = "var(--p-c)";
     } else if (progress === 5) {
       progressText.textContent = `Excellent! ✅`;
+      progressText.style.color = "var(--p-c)";
       progressBar.width = "220px";
       progressBar.backgroundColor = "var(--p-c)";
     } else if (progress <= 4 && progress > 2) {
@@ -120,7 +122,6 @@ function handleGeneratePassword() {
     includeSymbols
   );
 
-  // document.getElementById("password-display").textContent = password;
   document.getElementById("text-area").value = password;
 }
 
@@ -154,6 +155,35 @@ function generatePassword(
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * allowedChars.length);
     password += allowedChars[randomIndex];
+  }
+
+  if (includeLowerCase && !password.match(/[a-z]/)) {
+    const randomIndex = Math.floor(Math.random() * length);
+    password =
+      password.substring(0, randomIndex) +
+      lowerCaseChars[Math.floor(Math.random() * lowerCaseChars.length)] +
+      password.substring(randomIndex + 1);
+  }
+  if (includeUpperCase && !password.match(/[A-Z]/)) {
+    const randomIndex = Math.floor(Math.random() * length);
+    password =
+      password.substring(0, randomIndex) +
+      upperCaseChars[Math.floor(Math.random() * upperCaseChars.length)] +
+      password.substring(randomIndex + 1);
+  }
+  if (includeNumbers && !password.match(/[0-9]/)) {
+    const randomIndex = Math.floor(Math.random() * length);
+    password =
+      password.substring(0, randomIndex) +
+      numberChars[Math.floor(Math.random() * numberChars.length)] +
+      password.substring(randomIndex + 1);
+  }
+  if (includeSymbols && !password.match(/[!@#$%^&*()_+\-=[\]{};':",./<>?]/)) {
+    const randomIndex = Math.floor(Math.random() * length);
+    password =
+      password.substring(0, randomIndex) +
+      symbolChars[Math.floor(Math.random() * symbolChars.length)] +
+      password.substring(randomIndex + 1);
   }
 
   return password;

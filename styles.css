@@ -1,8 +1,6 @@
 :root {
   --p-c: rgb(2, 161, 2);
-  /* --p-c: rgb(1, 198, 1); */
   --s-c: rgb(243, 226, 34);
-  /* --s-c: rgb(251, 236, 74); */
 }
 
 * {
@@ -104,6 +102,7 @@ textarea:focus {
   height: 10px;
   background-color: var(--p-c);
   border-radius: 5px;
+  transition: 0.5s;
 }
 
 .progress-text {
